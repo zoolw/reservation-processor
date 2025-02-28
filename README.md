@@ -14,6 +14,9 @@ Aplikacja backendowa do przetwarzania plików rezerwacji w formacie **XLSX** z w
 
 ## Instalacja i uruchomienie
 
+- aplikację uruchamiać poprzez: docker-compose up --build -d
+- dokumentacja API: http://localhost:3000/api#
+
 ## Potencialne usprawnienia w przyszłości
 
 - **Obsługa dużych plików** – zaimplementowanie podziału na sesje w Mongo (wymaga replikacji w bazie).
