@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nestjs_app
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/reservations
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+
+volumes:
+  mongodb_data:
+    driver: local
