@@ -16,6 +16,12 @@ Aplikacja backendowa do przetwarzania plików rezerwacji w formacie **XLSX** z w
 
 - aplikację uruchamiać poprzez: docker-compose up --build -d
 - dokumentacja API: http://localhost:3000/api#
+- przykładowy .env:
+  MONGO_URI=mongodb://localhost:27017/reservations
+  REDIS_HOST=localhost
+  REDIS_PORT=6379
+  API_KEY=super-tajne-haslo
+  BATCH_SIZE=100
 
 ## Potencialne usprawnienia w przyszłości
 
